@@ -1,0 +1,32 @@
+{
+  "name": "react-app-starterkit",
+  "version": "1.0.0",
+  "description": "Starterkit for React - frostney edition",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/frostney/react-app-starterkit.git"
+  },
+  "keywords": [
+    "react",
+    "boilerplate",
+    "starterkit",
+    "app",
+    "webapp"
+  ],
+  "author": "Johannes Stein",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/frostney/react-app-starterkit/issues"
+  },
+  "homepage": "https://github.com/frostney/react-app-starterkit#readme",
+  "dependencies": {
+    "history": "^1.17.0",
+    "react": "^0.14.7",
+    "react-css-modules": "^3.7.0",
+    "react-router": "^1.0.3"
+  }
+}
