@@ -12,7 +12,7 @@ class NotFound extends Component {
 
 const routes = (
   <Route path="/">
-    <IndexRoute component={Front} />
+    <IndexRoute component={Home} />
     <Route path="logout" component={About} />
     <Route path="account" component={HomeGrid} />
     <Route path="*" component={NotFound} />
