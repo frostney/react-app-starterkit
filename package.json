@@ -30,6 +30,7 @@
     "react-router": "^1.0.3"
   },
   "devDependencies": {
+    "babel-register": "^6.4.3",
     "chai": "^3.5.0",
     "eslint": "^1.10.3",
     "eslint-config-airbnb": "^4.0.0",
