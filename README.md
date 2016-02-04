@@ -5,6 +5,11 @@ This is not universal/isomorphic.
 
 This based on the Yeoman React Webpack generator, but uses Ryan Florence's guide for component structure and does not include any Flux-relevant stubs.
 
+Includes:
+- Webpack (with webpack-dev-server and several loaders)
+- React
+- React-Router
+
 ### Conventions
 
 ##### Filenames
