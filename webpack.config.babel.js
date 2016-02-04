@@ -1,5 +1,9 @@
-import path from 'path';
 import minimist from 'minimist';
+
+import base from './webpack/base';
+import dev from './webpack/dev';
+import dist from './webpack/dist';
+import test from './webpack/test';
 
 const args = minimist(process.argv.slice(2));
 
@@ -17,14 +21,12 @@ if (args._.length > 0 && args._.indexOf('start') !== -1) {
 }
 process.env.REACT_WEBPACK_ENV = env;
 
-const configFolder = 'webpack';
-
 // Get available configurations
 const configs = {
-  base: require(path.join(__dirname, configFolder, 'base')),
-  dev: require(path.join(__dirname, configFolder, 'dev')),
-  dist: require(path.join(__dirname, configFolder, 'dist')),
-  test: require(path.join(__dirname, configFolder, 'test')),
+  base,
+  dev,
+  dist,
+  test,
 };
 
 /**
@@ -35,6 +37,9 @@ const configs = {
 function buildConfig(wantedEnv) {
   const isValid = wantedEnv && wantedEnv.length > 0 && allowedEnvs.indexOf(wantedEnv) !== -1;
   const validEnv = isValid ? wantedEnv : 'dev';
+
+  console.log(configs[validEnv]);
+
   return configs[validEnv];
 }
 
