@@ -4,7 +4,14 @@
   "description": "Starterkit for React - frostney edition",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "clean": "rimraf dist/*",
+    "copy": "copyfiles -f ./src/index.html ./src/favicon.ico ./dist",
+    "prebuild": "npm run clean && npm run copy",
+    "build": "npm run copy & webpack --env=dist",
+    "test": "karma start",
+    "serve": "node server.js --env=dev",
+    "serve:dist": "node server.js --env=dist",
+    "start": "npm run serve"
   },
   "repository": {
     "type": "git",
@@ -30,13 +37,23 @@
     "react-router": "^1.0.3"
   },
   "devDependencies": {
+    "babel-loader": "^6.2.2",
+    "babel-preset-es2015": "^6.3.13",
+    "babel-preset-react": "^6.3.13",
+    "babel-preset-stage-1": "^6.3.13",
     "babel-register": "^6.4.3",
     "chai": "^3.5.0",
+    "css-loader": "^0.23.1",
     "eslint": "^1.10.3",
     "eslint-config-airbnb": "^4.0.0",
+    "eslint-plugin-react": "^3.16.1",
     "husky": "^0.10.2",
     "karma": "^0.13.19",
     "karma-mocha": "^0.2.1",
-    "mocha": "^2.4.5"
+    "mocha": "^2.4.5",
+    "open": "0.0.5",
+    "style-loader": "^0.13.0",
+    "webpack": "^1.12.12",
+    "webpack-dev-server": "^1.14.1"
   }
 }
