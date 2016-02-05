@@ -38,8 +38,6 @@ function buildConfig(wantedEnv) {
   const isValid = wantedEnv && wantedEnv.length > 0 && allowedEnvs.indexOf(wantedEnv) !== -1;
   const validEnv = isValid ? wantedEnv : 'dev';
 
-  console.log(configs[validEnv]);
-
   return configs[validEnv];
 }
 
