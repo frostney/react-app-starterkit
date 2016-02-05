@@ -13,9 +13,7 @@ export default {
   },
   resolve: {
     extensions: ['', '.js', '.jsx'],
-    alias: {
-      root: constants.src,
-    },
+    root: constants.src,
   },
   postcss: [autoprefixer],
 };
