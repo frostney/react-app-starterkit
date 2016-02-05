@@ -5,7 +5,7 @@ Btw: I really love red rectangles.
 
 This is not universal/isomorphic.
 
-This based on the Yeoman React Webpack generator, but uses Ryan Florence's guide for component structure and does not include any Flux-relevant stubs.
+This based on the [Yeoman React Webpack generator](https://github.com/newtriks/generator-react-webpack), but uses Ryan Florence's [guide for component structure](https://gist.github.com/ryanflorence/daafb1e3cb8ad740b346) with a focus on a flat structure and does not include any Flux-relevant stubs.
 
 Includes:
 - Webpack (with webpack-dev-server and several loaders)
