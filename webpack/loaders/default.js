@@ -6,9 +6,12 @@ export default [{
   test: /\.css$/,
   loader: ExtractTextPlugin.extract('style', cssModules),
 }, {
-  test: /\.less/,
+  test: /\.less$/,
   loader: ExtractTextPlugin.extract('style', `${cssModules}!less`),
 }, {
   test: /\.(png|jpg|gif|woff|woff2)$/,
   loader: 'url-loader?limit=8192',
+}, {
+  test: /\.json$/,
+  loader: 'json',
 }];
