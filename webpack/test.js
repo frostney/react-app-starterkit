@@ -6,6 +6,12 @@ import base from './base';
 const testConfig = deepExtend({}, base, {
   cache: true,
   devtool: 'eval-source-map',
+  node: {
+    fs: 'empty',
+    tls: 'empty',
+    net: 'empty',
+    child_process: 'empty',
+  },
 });
 
 const cssModules = 'css?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]';
