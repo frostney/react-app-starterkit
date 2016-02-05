@@ -12,7 +12,7 @@ export default {
     reasons: false,
   },
   resolve: {
-    extensions: ['', '.js', '.jsx'],
+    extensions: ['', '.js', '.jsx', '.json'],
     root: constants.src,
   },
   postcss: [autoprefixer],
