@@ -5,10 +5,10 @@ export default config => {
     basePath: '',
     frameworks: ['mocha', 'chai'],
     files: [
-      'test/**/*.js',
+      'test/index.js',
     ],
     preprocessors: {
-      'test/**/*.js': ['webpack', 'sourcemap'],
+      'test/index.js': ['webpack', 'sourcemap'],
     },
     webpack: webpackConfig,
 
