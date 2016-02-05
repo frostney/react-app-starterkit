@@ -30,7 +30,8 @@ devConfig.module = {
   preLoaders,
   loaders: [].concat.call([], defaultLoaders, [{
     test: /\.(js|jsx)$/,
-    loader: 'react-hot!babel-loader',
+    exclude: /node_modules/,
+    loader: 'react-hot!babel',
   }]),
 };
 

@@ -18,7 +18,8 @@ distConfig.module = {
   preLoaders,
   loaders: [].concat(defaultLoaders, [{
     test: /\.(js|jsx)$/,
-    loader: 'babel-loader',
+    exclude: /node_modules/,
+    loader: 'babel',
   }]),
 };
 
