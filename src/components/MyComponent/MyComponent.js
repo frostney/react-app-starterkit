@@ -6,7 +6,7 @@ class MyComponent extends Component {
       <div styleName="container">
         <div styleName="rectangle">Hello World!</div>
       </div>
-    )
+    );
   }
 }
 
