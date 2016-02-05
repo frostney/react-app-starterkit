@@ -16,6 +16,7 @@ const devConfig = deepExtend({}, base, {
     publicPath: constants.publicPath,
     noInfo: false,
   },
+  port: constants.port,
   entry: [
     `webpack-dev-server/client?http://127.0.0.1:${constants.port}`,
     'webpack/hot/only-dev-server',
