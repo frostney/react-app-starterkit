@@ -23,10 +23,14 @@ Export name = Filename
 - `styles.less` that contains the stylesheets for the component
 
 #### Tests
-Coverage with `babel-istanbul`
+Coverage with `babel-istanbul`, Karma, Mocha, Chai, Enzyme
 
 ##### Loader naming
 `babel` instead of `babel-loader`
+
+## Where I want to improve
+- I don't like `index.js` files with `req.keys`. It's too Webpack-specific and relies on the fact that everything will be transformed into CommonJS modules
+- I kinda want a generator/template for components. I know there was something similar like Yeoman but on a project basis, but I couldn't find it right now
 
 ## License
 MIT
