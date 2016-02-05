@@ -1,17 +1,20 @@
 import { expect } from 'chai';
 
+import { render } from 'enzyme';
+
 import { MyComponent } from 'components';
 
 import React from 'react';
 
 describe('MyComponent', () => {
   it('should create a new instance of MyComponent', () => {
-    const container = document.createElement('container');
-    container.id = 'content';
-    document.body.appendChild(container);
+    const wrapper = render(<MyComponent />);
 
-    const component = React.createElement(MyComponent);
+    expect(wrapper).to.be.ok;
+  });
 
-    expect(component).to.be.ok;
+  it('renders two divs', () => {
+    const wrapper = render(<MyComponent />);
+    expect(wrapper.find('div').length).to.equal(2);
   });
 });

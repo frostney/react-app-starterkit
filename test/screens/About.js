@@ -1,5 +1,7 @@
 import { expect } from 'chai';
 
+import { render } from 'enzyme';
+
 import { About } from 'screens';
 
 import React from 'react';
