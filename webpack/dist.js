@@ -20,6 +20,9 @@ distConfig.module = {
     test: /\.(js|jsx)$/,
     exclude: /node_modules/,
     loader: 'babel',
+  }, {
+    test: /\.async\.jsx?$/i,
+    loader: 'react-proxy!exports?exports.default!babel',
   }]),
 };
 

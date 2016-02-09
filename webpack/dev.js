@@ -32,6 +32,9 @@ devConfig.module = {
     test: /\.(js|jsx)$/,
     exclude: /node_modules/,
     loader: 'react-hot!babel',
+  }, {
+    test: /\.async\.jsx?$/i,
+    loader: 'react-hot!react-proxy!exports?exports.default!babel',
   }]),
 };
 
