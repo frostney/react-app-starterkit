@@ -8,6 +8,8 @@
     "copy": "copyfiles -f ./src/index.html ./src/favicon.ico ./dist",
     "prebuild": "npm run clean && npm run copy",
     "build": "webpack --env=dist",
+    "lint": "eslint .",
+    "pretest": "npm run lint",
     "test": "karma start",
     "serve": "node server.js --env=dev",
     "serve:dist": "node server.js --env=dist",
