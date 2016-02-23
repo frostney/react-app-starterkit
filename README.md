@@ -44,6 +44,7 @@ Coverage with `babel-istanbul`, Karma, Mocha, Chai, Enzyme
 - Use `react-proxy` or something similar to enable code splitting for React component and/or screens
 - Put tests into component/screen folder
 - Put `README` into each component/screen folder with usage example
+- Don't do `stage-1` as a preset. Rather use `class-properties` directly
 
 ### License
 MIT
