@@ -6,7 +6,7 @@ import ReactDOM from 'react-dom';
 
 import { Router } from 'react-router';
 
-import createHashHistory from 'history/lib/createHashHistory';
+import { createHashHistory } from 'history';
 import routes from './routes';
 
 import 'styles/main.less';
