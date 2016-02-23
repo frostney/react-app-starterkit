@@ -42,6 +42,8 @@ Coverage with `babel-istanbul`, Karma, Mocha, Chai, Enzyme
 - I don't like `index.js` files with `req.keys`. It's too Webpack-specific and relies on the fact that everything will be transformed into CommonJS modules
 - I kinda want a generator/template for components. I know there was something similar like Yeoman but on a project basis, but I couldn't find it right now
 - Use `react-proxy` or something similar to enable code splitting for React component and/or screens
+- Put tests into component/screen folder
+- Put `README` into each component/screen folder with usage example
 - `enzyme` doesn't play super-well with Karma & Webpack. That's why the tests are failing right now. There's a PR open to remove jsdom, sinon etc. which would help a lot
 
 ### License
