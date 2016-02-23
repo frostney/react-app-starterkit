@@ -1,4 +1,8 @@
 # react-app-starterkit
+
+[![Dependency Status](https://david-dm.org/frostney/react-app-starterkit.svg)](https://david-dm.org/frostney/react-app-starterkit)
+[![devDependency Status](https://david-dm.org/frostney/react-app-starterkit/dev-status.svg)](https://david-dm.org/frostney/react-app-starterkit#info=devDependencies)
+
 My personal (opiniated) template for React projects. This is very much geared towards what I need in my React project, so it may not fit your use case.
 
 Btw: I really love red rectangles.
