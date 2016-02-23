@@ -44,7 +44,6 @@ Coverage with `babel-istanbul`, Karma, Mocha, Chai, Enzyme
 - Use `react-proxy` or something similar to enable code splitting for React component and/or screens
 - Put tests into component/screen folder
 - Put `README` into each component/screen folder with usage example
-- `enzyme` doesn't play super-well with Karma & Webpack. That's why the tests are failing right now. There's a PR open to remove jsdom, sinon etc. which would help a lot
 
 ### License
 MIT
