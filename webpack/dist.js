@@ -20,6 +20,10 @@ distConfig.module = {
     test: /\.(js|jsx)$/,
     exclude: /node_modules/,
     loader: 'babel',
+  }, {
+    test: /\.async.(js|jsx)$/,
+    exclude: /node_modules/,
+    loader: 'babel!react-proxy-es2015',
   }]),
 };
 
