@@ -1,9 +1,6 @@
 import minimist from 'minimist';
 
-import base from './webpack/base';
-import dev from './webpack/dev';
-import dist from './webpack/dist';
-import test from './webpack/test';
+import { dev, dist, test } from './webpack';
 
 const args = minimist(process.argv.slice(2));
 
@@ -23,7 +20,6 @@ process.env.REACT_WEBPACK_ENV = env;
 
 // Get available configurations
 const configs = {
-  base,
   dev,
   dist,
   test,

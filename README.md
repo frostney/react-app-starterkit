@@ -42,13 +42,14 @@ Coverage with `babel-istanbul`, Karma, Mocha, Chai, Enzyme
 ##### Loader naming
 `babel` instead of `babel-loader`
 
+### Decisions
+- No `req.keys` for dynamically loading files. It's too Webpack-specific and relies on the fact that everything will be transformed into CommonJS modules. It won't work with Webpack 2's tree shaking and while manually taking care of the dependencies feels like a hassle, it's safer (and can be internally optimized by bundlers) in the long run.
+
 ### Where I want to improve
-- I don't like `index.js` files with `req.keys`. It's too Webpack-specific and relies on the fact that everything will be transformed into CommonJS modules
 - I kinda want a generator/template for components. I know there was something similar like Yeoman but on a project basis, but I couldn't find it right now
 - Use `react-proxy` or something similar to enable code splitting for React component and/or screens
-- Put tests into component/screen folder
+- Put tests into component/screen folder (What to do with the `.eslintrc.yml` file in the tests folder then?)
 - Put `README` into each component/screen folder with usage example
-- Don't do `stage-1` as a preset. Rather use `class-properties` directly
 
 ### License
 MIT
