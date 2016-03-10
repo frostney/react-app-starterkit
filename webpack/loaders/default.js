@@ -4,10 +4,10 @@ const cssModules = 'css?modules&importLoaders=1&localIdentName=[name]__[local]__
 
 export default [{
   test: /\.css$/,
-  loader: ExtractTextPlugin.extract('style', cssModules),
+  loader: ExtractTextPlugin.extract('style', `${cssModules}!postcss`),
 }, {
   test: /\.less$/,
-  loader: ExtractTextPlugin.extract('style', `${cssModules}!less`),
+  loader: ExtractTextPlugin.extract('style', `${cssModules}!less!postcss`),
 }, {
   test: /\.(png|jpg|gif|woff|woff2)$/,
   loader: 'url-loader?limit=8192',
