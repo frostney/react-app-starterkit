@@ -25,6 +25,14 @@ Prerequisite: Node.js needs to be installed.
 3. `npm start` starts the development server (with hot module reloading and those kind of things...)
 4. `npm run build` does a minified build of everything.
 
+### Deployment
+Deployment for Github Pages and Gitlab Pages is integrated.
+
+- Github Pages: Type `npm deploy` to deploy to Github Pages.
+- Gitlab Pages: Gitlab CI will automatically pick up the `.gitlab-ci.yml` file and deploy once it creates a successful build
+
+Caveats with Gitlab Pages: For some reason, some node modules won't install with Gitlab CI, particularly `husky` and `phantomjs-prebuilt`.
+
 ### Conventions
 
 ##### Filenames

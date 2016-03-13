@@ -1,0 +1,14 @@
+image: node:5
+
+pages:
+  script:
+    - npm remove husky phantomjs-prebuilt --save-dev
+    - npm install
+    - npm run build
+    - mkdir public
+    - ./node_modules/.bin/copyfiles -u 1 "dist/**/*" public
+  artifacts:
+    paths:
+      - public
+  only:
+    - master
