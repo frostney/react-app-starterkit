@@ -1,4 +1,3 @@
-import defaultLoaders from './default';
-import preLoaders from './pre';
-
-export { defaultLoaders, preLoaders };
+export defaultLoaders from './default';
+export preLoaders from './pre';
+export cssLoaders from './css';

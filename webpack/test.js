@@ -1,5 +1,7 @@
 import deepExtend from 'deep-extend';
-import ExtractTextPlugin from 'extract-text-webpack-plugin';
+
+import { cssLoaders } from './loaders';
+import { extractCSS, extractCSSModules } from './extracts';
 
 import base from './base';
 
@@ -14,8 +16,6 @@ const testConfig = deepExtend({}, base, {
   },
 });
 
-const cssModules = 'css?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]';
-
 testConfig.module = {
   preLoaders: [{
     test: /\.js$/,
@@ -26,23 +26,18 @@ testConfig.module = {
     loader: 'babel',
     exclude: /(node_modules|src)/,
   }],
-  loaders: [{
-    test: /\.css$/,
-    loader: ExtractTextPlugin.extract('style', cssModules),
-  }, {
-    test: /\.less/,
-    loader: ExtractTextPlugin.extract('style', `${cssModules}!less`),
-  }, {
+  loaders: [].concat(cssLoaders, [{
     test: /\.(png|jpg|gif|woff|woff2)$/,
     loader: 'null-loader',
   }, {
     test: /\.json$/,
     loader: 'json',
-  }],
+  }]),
 };
 
 testConfig.plugins = [
-  new ExtractTextPlugin('style.css'),
+  extractCSS,
+  extractCSSModules,
 ];
 
 export default testConfig;

@@ -1,6 +1,7 @@
 import webpack from 'webpack';
 import deepExtend from 'deep-extend';
-import ExtractTextPlugin from 'extract-text-webpack-plugin';
+
+import { extractCSS, extractCSSModules } from './extracts';
 
 import constants from './constants';
 import base from './base';
@@ -24,7 +25,8 @@ distConfig.module = {
 };
 
 distConfig.plugins = [
-  new ExtractTextPlugin('style.css'),
+  extractCSS,
+  extractCSSModules,
   new webpack.optimize.DedupePlugin(),
   new webpack.DefinePlugin({
     'process.env.NODE_ENV': JSON.stringify('production'),

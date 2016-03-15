@@ -1,6 +1,7 @@
 import webpack from 'webpack';
 import deepExtend from 'deep-extend';
-import ExtractTextPlugin from 'extract-text-webpack-plugin';
+
+import { extractCSS, extractCSSModules } from './extracts';
 
 import constants from './constants';
 import base from './base';
@@ -36,7 +37,8 @@ devConfig.module = {
 };
 
 devConfig.plugins = [
-  new ExtractTextPlugin('style.css'),
+  extractCSS,
+  extractCSSModules,
   new webpack.HotModuleReplacementPlugin(),
   new webpack.NoErrorsPlugin(),
 ];
