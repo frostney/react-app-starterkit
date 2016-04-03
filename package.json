@@ -11,6 +11,7 @@
     "lint": "eslint .",
     "pretest": "npm run lint",
     "test": "karma start",
+    "newtest": "ava 'src/**/*.test.js'",
     "serve": "node server.js --env=dev",
     "serve:dist": "node server.js --env=dist",
     "start": "npm run serve",
@@ -28,6 +29,10 @@
     "app",
     "webapp"
   ],
+  "ava": {
+    "babel": "inherit",
+    "register": ["babel-register"]
+  },
   "author": "Johannes Stein",
   "license": "MIT",
   "bugs": {
