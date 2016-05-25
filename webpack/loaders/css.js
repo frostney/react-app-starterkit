@@ -2,13 +2,12 @@ import { extractCSS, extractCSSModules } from '../extracts';
 
 const cssModules = 'css?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]';
 
-export { extractCSS, extractCSSModules };
-export default [{
+const extractStyles = [{
   test: /styles\/.*\.css/,
   loader: extractCSS.extract('style', `${cssModules}!postcss`),
 }, {
   test: /styles\/.*\.less/,
-  loader: extractCSS.extract('style', 'css!less'),
+  loader: extractCSS.extract('style', 'css!less!postcss'),
 }, {
   test: /(components|screens)\/.*\.less/,
   loader: extractCSSModules.extract('style', `${cssModules}!less!postcss`),
@@ -16,3 +15,19 @@ export default [{
   test: /(components|screens)\/.*\.css/,
   loader: extractCSSModules.extract('style', `${cssModules}!postcss`),
 }];
+
+const includeStyles = [{
+  test: /styles\/.*\.css/,
+  loader: `style!${cssModules}!postcss`,
+}, {
+  test: /styles\/.*\.less/,
+  loader: 'style!css!less!postcss',
+}, {
+  test: /(components|screens)\/.*\.less/,
+  loader: `style!${cssModules}!less!postcss`,
+}, {
+  test: /(components|screens)\/.*\.css/,
+  loader: `style!${cssModules}!postcss`,
+}];
+
+export { extractCSS, extractCSSModules, includeStyles, extractStyles };

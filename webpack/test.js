@@ -1,7 +1,6 @@
 import deepExtend from 'deep-extend';
 
-import { cssLoaders } from './loaders';
-import { extractCSS, extractCSSModules } from './extracts';
+import { includeStyles } from './loaders/css';
 
 import base from './base';
 
@@ -26,7 +25,7 @@ testConfig.module = {
     loader: 'babel',
     exclude: /(node_modules|src)/,
   }],
-  loaders: [].concat(cssLoaders, [{
+  loaders: [].concat(includeStyles, [{
     test: /\.(png|jpg|gif|woff|woff2)$/,
     loader: 'null-loader',
   }, {
@@ -34,10 +33,5 @@ testConfig.module = {
     loader: 'json',
   }]),
 };
-
-testConfig.plugins = [
-  extractCSS,
-  extractCSSModules,
-];
 
 export default testConfig;

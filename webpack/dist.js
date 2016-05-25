@@ -7,6 +7,7 @@ import constants from './constants';
 import base from './base';
 
 import { preLoaders, defaultLoaders } from './loaders';
+import { extractStyles } from './loaders/css';
 
 const distConfig = deepExtend({}, base, {
   entry: constants.entry,
@@ -17,7 +18,7 @@ const distConfig = deepExtend({}, base, {
 
 distConfig.module = {
   preLoaders,
-  loaders: [].concat(defaultLoaders, [{
+  loaders: [].concat(defaultLoaders, extractStyles, [{
     test: /\.(js|jsx)$/,
     exclude: /node_modules/,
     loader: 'babel',

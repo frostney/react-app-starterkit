@@ -1,12 +1,11 @@
 import webpack from 'webpack';
 import deepExtend from 'deep-extend';
 
-import { extractCSS, extractCSSModules } from './extracts';
-
 import constants from './constants';
 import base from './base';
 
 import { preLoaders, defaultLoaders } from './loaders';
+import { includeStyles } from './loaders/css';
 
 const devConfig = deepExtend({}, base, {
   devServer: {
@@ -29,7 +28,7 @@ const devConfig = deepExtend({}, base, {
 
 devConfig.module = {
   preLoaders,
-  loaders: [].concat.call([], defaultLoaders, [{
+  loaders: [].concat.call([], defaultLoaders, includeStyles, [{
     test: /\.(js|jsx)$/,
     exclude: /node_modules/,
     loader: 'react-hot!babel',
@@ -37,8 +36,6 @@ devConfig.module = {
 };
 
 devConfig.plugins = [
-  extractCSS,
-  extractCSSModules,
   new webpack.HotModuleReplacementPlugin(),
   new webpack.NoErrorsPlugin(),
 ];
