@@ -45,7 +45,7 @@ Export name = Filename
 - `styles.less` that contains the stylesheets for the component
 
 #### Tests
-Coverage with `babel-istanbul`, Karma, Mocha, Chai, Enzyme
+Tests are using AVA + Enzyme, Coverage through NYC
 
 ##### Loader naming
 `babel` instead of `babel-loader`
