@@ -56,8 +56,6 @@ Tests are using AVA + Enzyme, Coverage through NYC
 ### Where I want to improve
 - I kinda want a generator/template for components. I know there was something similar like Yeoman but on a project basis, but I couldn't find it right now
 - Use `react-proxy` or something similar to enable code splitting for React component and/or screens
-- Put tests into component/screen folder (What to do with the `.eslintrc.yml` file in the tests folder then?)
-- Put `README` into each component/screen folder with usage example
 
 ### License
 MIT
