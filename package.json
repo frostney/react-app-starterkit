@@ -15,7 +15,9 @@
     "serve:dist": "node server.js --env=dist",
     "start": "npm run serve",
     "precommit": "npm run lint",
-    "deploy": "gh-pages -t -d dist -b gh-pages"
+    "deploy": "gh-pages -t -d dist -b gh-pages",
+    "create-component": "babel-node ./scripts/create-component.js",
+    "create-screen": "babel-node ./scripts/create-screen.js"
   },
   "repository": {
     "type": "git",
@@ -57,6 +59,7 @@
   "devDependencies": {
     "autoprefixer": "^6.3.6",
     "ava": "^0.15.0",
+    "babel-cli": "^6.9.0",
     "babel-eslint": "^6.0.4",
     "babel-istanbul-loader": "^0.1.0",
     "babel-loader": "^6.2.3",
@@ -87,6 +90,7 @@
     "less": "^2.7.1",
     "less-loader": "^2.2.3",
     "minimist": "^1.2.0",
+    "mkdirp": "^0.5.1",
     "null-loader": "^0.1.1",
     "open": "0.0.5",
     "postcss-loader": "^0.9.1",
