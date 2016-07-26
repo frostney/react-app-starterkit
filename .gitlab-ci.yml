@@ -2,7 +2,7 @@ image: node:6
 
 pages:
   script:
-    - npm remove husky phantomjs-prebuilt --save-dev
+    - npm remove husky --save-dev
     - npm install
     - npm run build
     - mkdir public
