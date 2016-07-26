@@ -18,7 +18,8 @@
     "deploy": "gh-pages -t -d dist -b gh-pages",
     "create-component": "babel-node ./scripts/create-component.js",
     "create-screen": "babel-node ./scripts/create-screen.js",
-    "create-layout": "babel-node ./scripts/create-layout.js"
+    "create-layout": "babel-node ./scripts/create-layout.js",
+    "create-modifier": "babel-node ./scripts/create-modifier.js"
   },
   "repository": {
     "type": "git",
