@@ -5,7 +5,7 @@ import { dev, dist, test } from './webpack';
 const args = minimist(process.argv.slice(2));
 
 // List of allowed environments
-const allowedEnvs = ['dev', 'dist', 'test'];
+const allowedEnvs = ['dev', 'dist'];
 
 // Set the correct environment
 let env;
@@ -22,7 +22,6 @@ process.env.REACT_WEBPACK_ENV = env;
 const configs = {
   dev,
   dist,
-  test,
 };
 
 /**
