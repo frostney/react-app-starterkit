@@ -4,6 +4,7 @@ import autoprefixer from 'autoprefixer';
 export default {
   output: {
     path: constants.outputPath,
+    chunkFilename: '[id].chunk.js',
     filename: constants.outputFilename,
     publicPath: constants.publicPath,
   },

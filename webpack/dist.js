@@ -16,12 +16,20 @@ const distConfig = deepExtend({}, base, {
   devtool: '#hidden-source-map',
 });
 
+const screenRegex = /screens\/([^\/]+\/?[^\/])\/index.(js|jsx)/;
+
 distConfig.module = {
   preLoaders,
   loaders: [].concat(defaultLoaders, extractStyles, [{
     test: /\.(js|jsx)$/,
-    exclude: /node_modules/,
+    exclude: [
+      /node_modules/,
+      screenRegex,
+    ],
     loader: 'babel',
+  }, {
+    test: screenRegex,
+    loader: 'bundle?lazy!react-hot!babel',
   }]),
 };
 

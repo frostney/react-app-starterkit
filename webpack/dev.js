@@ -26,12 +26,20 @@ const devConfig = deepExtend({}, base, {
   devtool: 'eval-source-map',
 });
 
+const screenRegex = /screens\/([^\/]+\/?[^\/])\/index.(js|jsx)/;
+
 devConfig.module = {
   preLoaders,
   loaders: [].concat.call([], defaultLoaders, includeStyles, [{
     test: /\.(js|jsx)$/,
-    exclude: /node_modules/,
+    exclude: [
+      /node_modules/,
+      screenRegex,
+    ],
     loader: 'react-hot!babel',
+  }, {
+    test: screenRegex,
+    loader: 'bundle?lazy!react-hot!babel',
   }]),
 };
 

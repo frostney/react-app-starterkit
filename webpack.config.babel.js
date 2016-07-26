@@ -1,6 +1,6 @@
 import minimist from 'minimist';
 
-import { dev, dist, test } from './webpack';
+import { dev, dist } from './webpack';
 
 const args = minimist(process.argv.slice(2));
 

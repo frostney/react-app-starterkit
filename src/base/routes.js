@@ -6,10 +6,15 @@ import { Home, About } from 'screens';
 
 const NotFound = () => <h2>Not found</h2>;
 
+const lazyLoadComponent = lazyModule =>
+  (location, cb) => {
+    lazyModule(module => cb(null, module));
+  };
+
 const routes = (
   <Route path="/">
-    <IndexRoute component={Home} />
-    <Route path="about" component={About} />
+    <IndexRoute getComponent={lazyLoadComponent(Home)} />
+    <Route path="about" getComponent={lazyLoadComponent(About)} />
     <Route path="*" component={NotFound} />
   </Route>
 );
