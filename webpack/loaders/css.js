@@ -9,10 +9,10 @@ const extractStyles = [{
   test: /styles\/.*\.less/,
   loader: extractCSS.extract('style', 'css!less!postcss'),
 }, {
-  test: /(components|screens)\/.*\.less/,
+  test: /(components|screens|layouts)\/.*\.less/,
   loader: extractCSSModules.extract('style', `${cssModules}!less!postcss`),
 }, {
-  test: /(components|screens)\/.*\.css/,
+  test: /(components|screens|layouts)\/.*\.css/,
   loader: extractCSSModules.extract('style', `${cssModules}!postcss`),
 }];
 
@@ -23,10 +23,10 @@ const includeStyles = [{
   test: /styles\/.*\.less/,
   loader: 'style!css!less!postcss',
 }, {
-  test: /(components|screens)\/.*\.less/,
+  test: /(components|screens|layouts)\/.*\.less/,
   loader: `style!${cssModules}!less!postcss`,
 }, {
-  test: /(components|screens)\/.*\.css/,
+  test: /(components|screens|layouts)\/.*\.css/,
   loader: `style!${cssModules}!postcss`,
 }];
 
