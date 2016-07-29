@@ -3,7 +3,7 @@
 [![Dependency Status](https://david-dm.org/frostney/react-app-starterkit.svg)](https://david-dm.org/frostney/react-app-starterkit)
 [![devDependency Status](https://david-dm.org/frostney/react-app-starterkit/dev-status.svg)](https://david-dm.org/frostney/react-app-starterkit#info=devDependencies)
 
-My personal (opiniated) template for React projects. This is very much geared towards what I need in my React project, so it may not fit your use case.
+My personal (opiniated) template for React projects. This is very much geared towards what I need in my React projects, so it may not fit your use case.
 
 Btw: I really love red rectangles.
 
@@ -52,6 +52,9 @@ Tests are using AVA + Enzyme, Coverage through NYC
 
 ### Decisions
 - No `req.keys` for dynamically loading files. It's too Webpack-specific and relies on the fact that everything will be transformed into CommonJS modules. It won't work with Webpack 2's tree shaking and while manually taking care of the dependencies feels like a hassle, it's safer (and can be internally optimized by bundlers) in the long run.
+
+### Things I want to experiment with
+- CSS-in-JS: Either Aphrodite or JSS
 
 ### License
 MIT
