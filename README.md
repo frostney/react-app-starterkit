@@ -31,7 +31,7 @@ Deployment for Github Pages and Gitlab Pages is integrated.
 - Github Pages: Type `npm deploy` to deploy to Github Pages.
 - Gitlab Pages: Gitlab CI will automatically pick up the `.gitlab-ci.yml` file and deploy once it creates a successful build
 
-Caveats with Gitlab Pages: For some reason, some node modules won't install with Gitlab CI, particularly `husky` and `phantomjs-prebuilt`.
+Caveats with Gitlab Pages: For some reason, some node modules won't install with Gitlab CI, particularly `husky`.
 
 ### Conventions
 
@@ -52,9 +52,6 @@ Tests are using AVA + Enzyme, Coverage through NYC
 
 ### Decisions
 - No `req.keys` for dynamically loading files. It's too Webpack-specific and relies on the fact that everything will be transformed into CommonJS modules. It won't work with Webpack 2's tree shaking and while manually taking care of the dependencies feels like a hassle, it's safer (and can be internally optimized by bundlers) in the long run.
-
-### Where I want to improve
-- Use `react-proxy` or something similar to enable code splitting for React component and/or screens
 
 ### License
 MIT
